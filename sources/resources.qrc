@@ -1,0 +1,18 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+	<qresource>	
+		<file>player/powersuit.png</file>
+		<file>items/items.png</file>
+		<file>levels/level1.png</file>
+		<file>icons/icon1.ico</file>
+		<file>player/Spider.png</file>
+		<file>objects/Bosses.png</file>
+		<file>player/Boss.png</file>
+		<file>player/Ripper.png</file>
+		<file>objects/objects.png</file>
+		<file>player/bat.png</file>
+		<file>objects/fonts.png</file>
+		<file>title/title.png</file>
+		<file>title/menu.png</file>
+	</qresource>
+</RCC>

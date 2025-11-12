@@ -1,0 +1,17 @@
+else if (id == "bat_walk")
+	{
+		animOutput[0] = QRect(2, 14, 21, 32);
+		animOutput[1] = QRect(23, 14, 12, 30);
+		animOutput[2] = QRect(34, 14, 12, 30);
+
+		}
+	else if (id == "bat_injured")
+	{
+		animOutput[0] = QRect(2, 45, 21, 32);
+		animOutput[1] = QRect(23, 45, 12, 30);
+		animOutput[2] = QRect(34, 45, 12, 30);
+	}
+	else if (id == "BatShot")
+	{
+	animOutput[0] = QRect(47, 17, 8, 8);
+	}

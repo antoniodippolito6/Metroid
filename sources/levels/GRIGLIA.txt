@@ -1,0 +1,45 @@
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <sstream>
+
+template <typename T>
+std::string num2str(T Number) {
+	std::stringstream ss;
+	ss << Number;
+	return ss.str();
+}
+
+int main()
+{
+	cv::Mat img = cv::imread("C:/Users/anton/Desktop/level1.png");
+	for (int y = 0; y < img.rows; y += 16)
+	{
+		cv::Vec3b* yThRow = img.ptr<cv::Vec3b>(y);
+		for (int x = 0; x < img.cols; x++)
+		{
+			if (x == 0 || x == img.cols-16)
+			{
+				cv::putText(img, num2str(y / 16), cv::Point(x + 1, y + 10), 2, 0.25, cv::Scalar(255, 255, 255), 1);
+			}
+			yThRow[x][0] = 120;
+			yThRow[x][1] = 120;
+			yThRow[x][2] = 120;
+		}
+	}
+	for (int y = 0; y < img.rows; y++)
+	{
+		cv::Vec3b* yThRow = img.ptr<cv::Vec3b>(y);
+		for (int x = 0; x < img.cols; x += 16)
+		{
+			if (y == 0 || y == img.rows-16)
+			{
+				cv::putText(img, num2str(x / 16), cv::Point(x, y + 14), 2, 0.25, cv::Scalar(255, 255, 255), 1);
+			}
+			yThRow[x][0] = 120;
+			yThRow[x][1] = 120;
+			yThRow[x][2] = 120;
+		}
+	}
+	cv::imwrite("C:/Users/anton/Desktop/level1_gridded.png", img);
+}
